@@ -38,7 +38,7 @@ production:
 backend:
   enabled: true
   imageName: vetec/plate-auth-backend
-  tag: 7eef75c
+  tag: 31d7b41
   port: 3723
   targetPort: 3723
   replicas: 1
@@ -95,4 +95,4 @@ nodeSelector: {}
 tolerations: []
 affinity: {}
 args:
-  appResyncPeriod: "10"
+  appResyncPeriod: '10'
