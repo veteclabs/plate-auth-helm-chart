@@ -15,5 +15,5 @@ spec:
     spec:
       containers:
         - name: {{ .Release.Name }}-app-frontend-pod
-          image: "{{ .Values.frontend.imageName }}:{{ .Values.backend.tag }}"
+          image: "{{ .Values.frontend.imageName }}:{{ .Values.frontend.tag }}"
 {{- end}}
