@@ -23,8 +23,8 @@ data:
       },
       "KEYCLOAK": {
         "GRANT_TYPE_CODE": "authorization_code",
-        "CLIENT_ID": "{{ .Values.keycloak.clientId }}",
-        "CLIENT_SECRET": "{{ .Values.keycloak.clientSecret }}",
+        "CLIENT_ID": "{{ .Values.production.keycloak.clientId }}",
+        "CLIENT_SECRET": "{{ .Values.production.keycloak.clientSecret }}",
         "REDIRECT_URI": "{{ .Values.production.keycloak.redirectUri }}",
         "SCOPE": "openid profile",
         "ADMIN_ACCESS_TOKEN_URL": "",
