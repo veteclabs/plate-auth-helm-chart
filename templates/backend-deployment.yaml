@@ -16,6 +16,12 @@ spec:
       containers:
         - name: {{ .Release.Name }}-app-backend-pod
           image: "{{ .Values.backend.imageName }}:{{ .Values.backend.tag }}"
+          env:
+          - name: CONFIG_JSON
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Release.Name }}-app-backend-configmap
+                key: production.json
           volumeMounts:
             - name: config-volume
               mountPath: /usr/src/app/backend/src/config
