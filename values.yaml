@@ -94,3 +94,5 @@ volumeMounts: []
 nodeSelector: {}
 tolerations: []
 affinity: {}
+args:
+  appResyncPeriod: "10"
