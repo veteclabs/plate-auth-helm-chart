@@ -46,8 +46,8 @@ frontend:
   enabled: true
   imageName: vetec/plate-auth-frontend
   tag: aff5db7
-  port: 3723
-  targetPort: 3723
+  port: 3750
+  targetPort: 3750
   replicas: 1
 imagePullSecrets: []
 nameOverride: ''
