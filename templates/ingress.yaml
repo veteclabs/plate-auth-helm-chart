@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: {{.Release.Namespace}}.{{.Values.ingress.hostname}}
+    - host: login.{{.Values.ingress.hostname}}
       http:
         paths:
           - path: /
@@ -30,7 +30,7 @@ spec:
                   number: {{ .Values.backend.port }}
   tls:
     - hosts:
-        - {{ .Release.Namespace }}.{{ .Values.ingress.hostname }}
-      secretName: {{ .Release.Namespace }}-plateteam-tls
+        - login.{{ .Values.ingress.hostname }}
+      secretName: login-plateteam-tls
 
 {{- end }}
