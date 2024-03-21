@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-app-backend-configmap
 data:
-  config.json: |
+  production.json: |
     {
       "production": {
         "host": "{{ .Values.production.database.host }}",
