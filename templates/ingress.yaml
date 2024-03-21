@@ -27,7 +27,7 @@ spec:
               service:
                 name: {{ .Release.Name }}-app-backend-service
                 port:
-                number: {{ .Values.backend.port }}
+                  number: {{ .Values.backend.port }}
   tls:
     - hosts:
         - {{ .Release.Namespace }}.{{ .Values.ingress.hostname }}
