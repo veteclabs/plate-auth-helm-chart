@@ -8,7 +8,7 @@ spec:
     app: {{ .Release.Name }}-app-frontend
   ports:
   - protocol: TCP
-    port: {{ .Values.backend.port }}
-    targetPort: {{ .Values.backend.targetPort }}
+    port: {{ .Values.frontend.port }}
+    targetPort: {{ .Values.frontend.targetPort }}
   type: ClusterIP
 {{- end}}
