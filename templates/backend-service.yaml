@@ -1,0 +1,14 @@
+{{- if .Values.backend.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-app-backend-service
+spec:
+  selector:
+    app: {{ .Release.Name }}-app-backend
+  ports:
+  - protocol: TCP
+    port: {{ .Values.backend.port }}
+    targetPort: {{ .Values.backend.targetPort }}
+  type: ClusterIP
+{{- end}}

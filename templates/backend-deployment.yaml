@@ -1,0 +1,27 @@
+{{ if .Values.backend.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-app-backend-controller
+spec:
+  replicas: {{ .Values.backend.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-app-backend
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-app-backend
+    spec:
+      containers:
+        - name: {{ .Release.Name }}-app-backend-pod
+          image: "{{ .Values.backend.imageName }}:{{ .Values.backend.tag }}"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /usr/src/app/backend/src/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: {{ .Release.Name }}-app-backend-configmap
+
+{{- end}}

@@ -1,0 +1,19 @@
+{{ if .Values.frontend.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-app-frontend-controller
+spec:
+  replicas: {{ .Values.backend.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-app-frontend
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-app-frontend
+    spec:
+      containers:
+        - name: {{ .Release.Name }}-app-frontend-pod
+          image: "{{ .Values.frontend.imageName }}:{{ .Values.backend.tag }}"
+{{- end}}

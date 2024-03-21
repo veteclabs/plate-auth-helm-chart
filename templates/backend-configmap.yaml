@@ -1,0 +1,62 @@
+{{ if .Values.backend.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-app-backend-configmap
+data:
+  config.json: |
+    {
+      "production": {
+        "host": "{{ .Values.production.database.host }}",
+        "port": "{{ .Values.production.database.port }}",
+        "username": "{{ .Values.production.database.username }}",
+        "password": "{{ .Values.production.database.password }}",
+        "database_bom": "{{ .Values.production.database.databaseBom }}",
+        "database_config": "{{ .Values.production.database.databaseConfig }}",
+        "dialect": "{{ .Values.production.database.dialect }}",
+        "timezone": "{{ .Values.production.database.timezone }}",
+        "dialectOptions": {
+          "charset": "utf8mb4",
+          "dateStrings": true,
+          "typeCast": true
+        }
+      },
+      "KEYCLOAK": {
+        "GRANT_TYPE_CODE": "authorization_code",
+        "CLIENT_ID": "{{ .Values.keycloak.clientId }}",
+        "CLIENT_SECRET": "{{ .Values.keycloak.clientSecret }}",
+        "REDIRECT_URI": "{{ .Values.production.keycloak.redirectUri }}",
+        "SCOPE": "openid profile",
+        "ADMIN_ACCESS_TOKEN_URL": "",
+        "ADMIN_USERNAME": "{{ .Values.production.keycloak.adminUsername }}",
+        "ADMIN_PWD": "{{ .Values.production.keycloak.adminPassword }}",
+        "GRANT_TYPE_PWD": "password",
+        "ADMIN_CLIENT_ID": "admin-cli",
+        "REALM": "{{ .Values.production.keycloak.realm }}"
+      },
+      "STIBEE": {
+        "LIST_ID":{{ .Values.production.stibee.listID | toJson }},
+        "API_KEY": "{{ .Values.production.stibee.apiKey }}"
+      },
+      "SMTP": {
+        "USER": "{{ .Values.production.smtp.user }}",
+        "PWD": "{{ .Values.production.smtp.password }}"
+      },
+      "GOOGLE": {
+        "CLIENT_ID": "{{ .Values.production.google.clientId }}",
+        "CLIENT_SECRET": "{{ .Values.production.google.clientSecret }}",
+        "LOGIN_REDIRECT_URI": "{{ .Values.production.google.loginRedirectUri }}"
+      },
+      "REDIRECT_URI": {
+        "MAIN": "{{ .Values.production.redirectUri.main }}"
+      },
+      "MAILER":  {
+        "VERIFICATION_PAGE": "{{ .Values.production.mailer.verificationPage }}",
+        "PWD_RESET_URL": "{{ .Values.production.mailer.pwdResetUrl }}"
+      }
+    }
+
+
+
+
+{{ end }}

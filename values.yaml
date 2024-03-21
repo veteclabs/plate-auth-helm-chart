@@ -9,6 +9,53 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
+production:
+  database:
+    host: ""
+    port: ""
+    username: ""
+    password: ""
+    databaseBom: ""
+    databaseConfig: ""
+    timezone: "+09:00"
+    dialect: ""
+  keycloak:
+    clientId: ""
+    clientSecret: ""
+    redirectUri: ""
+    adminUsername: ""
+    adminPassword: ""
+    realm: ""
+  stibee:
+    listID: ""
+    apiKey: ""
+  smtp:
+    user: ""
+    password: ""
+  google:
+    clientId: ""
+    clientSecret: ""
+    loginRedirectUri: ""
+  redirectUri:
+    main: ""
+  mailer:
+    verificationPage: ""
+    pwdResetUrl: ""
+backend:
+  enabled: true
+  imageName: vetec/plate-auth-backend
+  tag: ""
+  port: 3723
+  targetPort: 3723
+  replicas: 1
+
+frontend:
+  enabled: true
+  imageName: vetec/plate-auth-frontend
+  tag: ""
+  port: 3723
+  targetPort: 3723
+  replicas: 1
 
 imagePullSecrets: []
 nameOverride: ""
@@ -44,8 +91,9 @@ service:
   port: 80
 
 ingress:
-  enabled: false
+  enabled: true
   className: ""
+  hostname: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
