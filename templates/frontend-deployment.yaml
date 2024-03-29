@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-app-frontend-controller
 spec:
-  replicas: {{ .Values.backend.replicas }}
+  replicas: {{ .Values.frontend.replicas }}
   selector:
     matchLabels:
       app: {{ .Release.Name }}-app-frontend
