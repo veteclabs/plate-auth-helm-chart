@@ -32,8 +32,7 @@ data:
         "GRANT_TYPE_CODE": "{{ .Values.production.keycloak.grantTypecode }}",
         "GRANT_TYPE_PWD": "{{ .Values.production.keycloak.grantTypePwd }}",
         "REDIRECT_URI": "{{ .Values.production.keycloak.redirectUri }}",
-        "ADMIN_ACCESS_TOKEN_URL": "{{ .Values.production.keycloak.adminAccessTokenUrl }}",
-
+        "ADMIN_ACCESS_TOKEN_URL": "{{ .Values.production.keycloak.adminAccessTokenUrl }}"
       },
       "STIBEE": {
         "LIST_ID":{{ .Values.production.stibee.listID | toJson }},
