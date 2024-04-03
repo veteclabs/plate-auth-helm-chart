@@ -14,13 +14,17 @@ production:
     timezone: +09:00
     dialect: ''
   keycloak:
+    realm: ''
+    scope: ''
+    adminUsername: ''
+    adminPwd: ''
+    adminClientId: ''
     clientId: ''
     clientSecret: ''
+    grantTypeCode: ''
+    grantTypePwd: ''
     redirectUri: ''
-    adminUsername: ''
-    adminPassword: ''
-    scope: ''
-    realm: ''
+    adminAccessTokenUrl: ''
   stibee:
     listID: ''
     apiKey: ''
