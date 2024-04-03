@@ -19,6 +19,7 @@ production:
     redirectUri: ''
     adminUsername: ''
     adminPassword: ''
+    scope: ''
     realm: ''
   stibee:
     listID: ''
