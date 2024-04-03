@@ -26,7 +26,7 @@ data:
         "CLIENT_ID": "{{ .Values.production.keycloak.clientId }}",
         "CLIENT_SECRET": "{{ .Values.production.keycloak.clientSecret }}",
         "REDIRECT_URI": "{{ .Values.production.keycloak.redirectUri }}",
-        "SCOPE": "openid profile",
+        "SCOPE": "{{ .Values.production.keycloak.scope }}",
         "ADMIN_ACCESS_TOKEN_URL": "",
         "ADMIN_USERNAME": "{{ .Values.production.keycloak.adminUsername }}",
         "ADMIN_PWD": "{{ .Values.production.keycloak.adminPassword }}",
