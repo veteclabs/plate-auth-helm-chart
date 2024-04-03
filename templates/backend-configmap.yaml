@@ -25,14 +25,14 @@ data:
         "REALM": "{{ .Values.production.keycloak.realm }}",
         "SCOPE": "{{ .Values.production.keycloak.scope }}",
         "ADMIN_USERNAME": "{{ .Values.production.keycloak.adminUsername }}",
-        "ADMIN_PWD": "{{ .Values.production.keycloak.adminPassword }}",
+        "ADMIN_PWD": "{{ .Values.production.keycloak.adminPwd }}",
         "ADMIN_CLIENT_ID": "{{ .Values.production.keycloak.adminClientId }}",
         "CLIENT_ID": "{{ .Values.production.keycloak.clientId }}",
         "CLIENT_SECRET": "{{ .Values.production.keycloak.clientSecret }}",
         "GRANT_TYPE_CODE": "{{ .Values.production.keycloak.grantTypecode }}",
         "GRANT_TYPE_PWD": "{{ .Values.production.keycloak.grantTypePwd }}",
         "REDIRECT_URI": "{{ .Values.production.keycloak.redirectUri }}",
-        "ADMIN_ACCESS_TOKEN_URL": "",
+        "ADMIN_ACCESS_TOKEN_URL": "{{ .Values.production.keycloak.adminAccessTokenUrl }}",
 
       },
       "STIBEE": {
