@@ -22,17 +22,18 @@ data:
         }
       },
       "KEYCLOAK": {
-        "GRANT_TYPE_CODE": "authorization_code",
-        "CLIENT_ID": "{{ .Values.production.keycloak.clientId }}",
-        "CLIENT_SECRET": "{{ .Values.production.keycloak.clientSecret }}",
-        "REDIRECT_URI": "{{ .Values.production.keycloak.redirectUri }}",
+        "REALM": "{{ .Values.production.keycloak.realm }}",
         "SCOPE": "{{ .Values.production.keycloak.scope }}",
-        "ADMIN_ACCESS_TOKEN_URL": "",
         "ADMIN_USERNAME": "{{ .Values.production.keycloak.adminUsername }}",
         "ADMIN_PWD": "{{ .Values.production.keycloak.adminPassword }}",
-        "GRANT_TYPE_PWD": "password",
-        "ADMIN_CLIENT_ID": "admin-cli",
-        "REALM": "{{ .Values.production.keycloak.realm }}"
+        "ADMIN_CLIENT_ID": "{{ .Values.production.keycloak.adminClientId }}",
+        "CLIENT_ID": "{{ .Values.production.keycloak.clientId }}",
+        "CLIENT_SECRET": "{{ .Values.production.keycloak.clientSecret }}",
+        "GRANT_TYPE_CODE": "{{ .Values.production.keycloak.grantTypecode }}",
+        "GRANT_TYPE_PWD": "{{ .Values.production.keycloak.grantTypePwd }}",
+        "REDIRECT_URI": "{{ .Values.production.keycloak.redirectUri }}",
+        "ADMIN_ACCESS_TOKEN_URL": "",
+
       },
       "STIBEE": {
         "LIST_ID":{{ .Values.production.stibee.listID | toJson }},
