@@ -27,6 +27,7 @@ data:
         "ADMIN_USERNAME": "{{ .Values.production.keycloak.adminUsername }}",
         "ADMIN_PWD": "{{ .Values.production.keycloak.adminPwd }}",
         "ADMIN_CLIENT_ID": "{{ .Values.production.keycloak.adminClientId }}",
+        "ADMIN_CLIENT_SECRET": "{{ .Values.production.keycloak.adminClientSecret }}",
         "CLIENT_ID": "{{ .Values.production.keycloak.clientId }}",
         "CLIENT_SECRET": "{{ .Values.production.keycloak.clientSecret }}",
         "GRANT_TYPE_CODE": "{{ .Values.production.keycloak.grantTypecode }}",
