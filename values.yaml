@@ -36,7 +36,7 @@ redis:
     persistence:
       enabled: true
       existingClaim: redis-pvc
-      storageClass: local-storage
+      storageClass:
       type: pvc
       accessModes:
       - ReadWriteOnce
