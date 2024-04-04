@@ -32,15 +32,7 @@ redis:
       ports:
         redis: 6379
   replica:
-    replicaCount: 1
-    persistence:
-      enabled: true
-      existingClaim: redis-pvc
-      storageClass:
-      type: pvc
-      accessModes:
-      - ReadWriteOnce
-      subPath: redis
+    replicaCount: 0
 persistentVolume:
   path: /volumes/plate
   enabled: true
