@@ -32,6 +32,7 @@ redis:
       ports:
         redis: 6379
   replica:
+    enabled: false
     replicaCount: 0
 persistentVolume:
   path: /volumes/plate
