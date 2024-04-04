@@ -1,7 +1,10 @@
 apiVersion: v2
 name: plate-auth
 description: A Helm chart for Kubernetes
-
+dependencies:
+  - name: redis
+    repository: https://charts.bitnami.com/bitnami
+    version: 17.3.18
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
