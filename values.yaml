@@ -35,7 +35,7 @@ redis:
     replicaCount: 1
     persistence:
       enabled: true
-      existingClaim: redis2-pvc
+      existingClaim: redis-pvc
       storageClass: local-storage
       type: pvc
       accessModes:
