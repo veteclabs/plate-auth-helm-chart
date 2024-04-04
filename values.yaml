@@ -25,7 +25,9 @@ production:
     grantTypeCode: ''
     grantTypePwd: ''
     redirectUri: ''
-    adminAccessTokenUrl: ''
+    urlMaster: ''
+    urlPlate: ''
+    urlPlateAdmin: ''
   stibee:
     listID: ''
     apiKey: ''
