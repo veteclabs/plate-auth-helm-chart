@@ -4,7 +4,33 @@ image:
   pullPolicy: IfNotPresent
   tag: ''
 redis:
-  capacity: 200Mi
+  ip: 127.0.0.1
+  enabled: true
+  volumePermissions:
+    enabled: true
+  port: '6378'
+  auth:
+    enabled: true
+    password: vetec3721!
+  capacity: 500Mi
+  architecture: standalone
+  service:
+    type: NodePort
+    nodePorts:
+      redis: 32379
+  master:
+    persistence:
+      enabled: true
+      existingClaim: redis-pvc
+      storageClass: local-storage
+      type: pvc
+      accessModes:
+      - ReadWriteOnce
+      subPath: redis
+    service:
+      type: ClusterIP
+      ports:
+        redis: 6379
 persistentVolume:
   path: /volumes/plate
   enabled: true
