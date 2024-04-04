@@ -1,0 +1,25 @@
+{{- if .Values.persistentVolume.enabled }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{.Release.Namespace}}-{{.Release.Name }}-redis2-pv
+spec:
+  capacity:
+    storage: {{ .Values.redis.capacity }}
+  volumeMode: Filesystem
+  accessModes: {{ toYaml .Values.persistentVolume.accessModes | nindent 4 }}
+  persistentVolumeReclaimPolicy: {{ .Values.persistentVolume.reclaimPolicy }}
+  storageClassName: {{ .Values.persistentVolume.storageClass }}
+  local:
+    path: {{ .Values.persistentVolume.path }}/{{.Release.Namespace}}
+  {{- if .Values.persistentVolume.nodeName }}
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - {{ .Values.persistentVolume.nodeName }}
+  {{- end }}
+{{- end }}
