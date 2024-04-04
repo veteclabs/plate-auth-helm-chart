@@ -3,6 +3,17 @@ image:
   repository: nginx
   pullPolicy: IfNotPresent
   tag: ''
+redis:
+  capacity: 200Mi
+persistentVolume:
+  path: /volumes/plate
+  enabled: true
+  storageClass: manual
+  capacity: 30Gi
+  accessModes:
+  - ReadWriteOnce
+  reclaimPolicy: Retain
+  nodeName: platek8s-master-node
 production:
   database:
     host: ''
