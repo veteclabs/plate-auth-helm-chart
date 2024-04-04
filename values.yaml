@@ -31,6 +31,8 @@ redis:
       type: ClusterIP
       ports:
         redis: 6379
+  replica:
+    replicaCount: 0
 persistentVolume:
   path: /volumes/plate
   enabled: true
