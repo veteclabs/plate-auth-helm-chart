@@ -44,7 +44,7 @@ production:
 backend:
   enabled: true
   imageName: vetec/plate-auth-backend
-  tag: 0c77907
+  tag: a8667e2
   port: 3723
   targetPort: 3723
   replicas: 1
